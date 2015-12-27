@@ -1,27 +1,28 @@
 // Controlling parameters, edit here
-val jvmVersion = "1.8"
+val jvmVersion = "1.7"
 val javaSrcVersion = "1.8"
-val scalacVersion = "2.11.7"
+val scalacVersion = "2.10.5"
 val orgPackage = "com.imrenagi"
 val releaseVersion = "1.0"
 
 // Warnings we always want active in Scala compiles
-val scalacMustHaveWarnings = Seq(
-  "-deprecation", // warning and location for usages of deprecated APIs
-  "-feature", // warning and location for usages of features that should be imported explicitly
-  "-unchecked", // additional warnings where generated code depends on assumptions
-  //  "-Xlint:_", // All Xlint warnings, activates most -Y cases as well
-  "-Xlint:-delayedinit-select", // Allow this one separately, off for now
-  "-Ywarn-dead-code", // These are -Y versions only so need explicit listing
-  //  "-Ywarn-numeric-widen",
-  "-Ywarn-value-discard",
-  "-Xfatal-warnings"
-)
+//val scalacMustHaveWarnings = Seq(
+//  "-deprecation", // warning and location for usages of deprecated APIs
+//  "-feature", // warning and location for usages of features that should be imported explicitly
+//  "-unchecked", // additional warnings where generated code depends on assumptions
+//  //  "-Xlint:_", // All Xlint warnings, activates most -Y cases as well
+//  "-Xlint:-delayedinit-select", // Allow this one separately, off for now
+//  "-Ywarn-dead-code", // These are -Y versions only so need explicit listing
+//  //  "-Ywarn-numeric-widen",
+//  "-Ywarn-value-discard",
+//  "-Xfatal-warnings"
+//)
+//
+//val scalacAllWarnings = scalacMustHaveWarnings ++ Seq(
+//  "-Ywarn-unused",  // Unused options are in -Y only
+//  "-Ywarn-unused-import"
+//)
 
-val scalacAllWarnings = scalacMustHaveWarnings ++ Seq(
-  "-Ywarn-unused",  // Unused options are in -Y only
-  "-Ywarn-unused-import"
-)
 
 organization in ThisBuild := orgPackage
 
@@ -34,7 +35,7 @@ scalacOptions in ThisBuild ++= Seq(
   "-encoding", "UTF-8"
 )
 
-scalacOptions in ThisBuild ++= scalacMustHaveWarnings
+//scalacOptions in ThisBuild ++= scalacMustHaveWarnings
 
 javacOptions in ThisBuild ++= Seq("-source", javaSrcVersion, "-target", jvmVersion)
 

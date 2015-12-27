@@ -23,7 +23,7 @@ object dependencies {
     "org.specs2" %% "specs2-core" % "3.6.4-20150901013911-1f41c5e" % "test",
     "ch.qos.logback" % "logback-classic" % "1.1.3",
     "com.typesafe" % "config" % "1.2.1",
-    "com.typesafe.play" % "play-json_2.11" % "2.4.0-M2"
+    "com.typesafe.play" % "play-json_2.10" % "2.4.0-M2"
   )
 
   val spark = Seq(
