@@ -1,0 +1,16 @@
+/RUNNING_PID
+/logs/
+/project/*-shim.sbt
+/project/project/
+/project/target/
+/target/
+.idea
+*.iml
+target
+/src
+native
+uploads
+application_local.conf
+*.log
+*.log.gz
+*/journal
