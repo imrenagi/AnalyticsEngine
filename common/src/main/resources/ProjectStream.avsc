@@ -1,0 +1,67 @@
+{
+	"type": "record",
+	"name": "project",
+	"namespace": "com.imrenagi.analytics.events.avro",
+	"fields": [{
+		"name": "id",
+		"type": "int"
+	}, {
+		"name": "name",
+		"type": ["null", "string"]
+	}, {
+		"name": "slug",
+		"type": "string"
+	}, {
+		"name": "description",
+		"type": "string"
+	}, {
+		"name": "cover",
+		"type": "string"
+	}, {
+		"name": "created_at",
+		"type": {
+			"type": "long",
+			"connect.version": 1,
+			"connect.name": "org.apache.kafka.connect.data.Timestamp"
+		}
+	}, {
+		"name": "updated_at",
+		"type": {
+			"type": "long",
+			"connect.version": 1,
+			"connect.name": "org.apache.kafka.connect.data.Timestamp"
+		}
+	}, {
+		"name": "deleted_at",
+		"type": ["null", {
+			"type": "long",
+			"connect.version": 1,
+			"connect.name": "org.apache.kafka.connect.data.Timestamp"
+		}]
+	}, {
+		"name": "status",
+		"type": "int"
+	}, {
+		"name": "account_id",
+		"type": "int"
+	}, {
+		"name": "vendor_id",
+		"type": "int"
+	}, {
+		"name": "category_id",
+		"type": "int"
+	}, {
+		"name": "external_id",
+		"type": ["null", "long"]
+	}, {
+		"name": "external_type",
+		"type": ["null", "int"]
+	}, {
+		"name": "location",
+		"type": "string"
+	}, {
+		"name": "cover_temp",
+		"type": "string"
+	}],
+	"connect.name": "projects"
+}

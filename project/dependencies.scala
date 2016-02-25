@@ -8,8 +8,10 @@ object dependencies {
     val phantom = "1.12.2"
   }
 
-  lazy val Common = common ++ cassandra
-  lazy val DataIngestion = common ++ kafka
+  lazy val Common = common ++ cassandra ++ kafka ++ avro ++ confluent
+  lazy val DataIngestion = common
+  lazy val BatchProcessing = common ++ spark ++ hadoop
+  lazy val StreamingProcessing = common ++ spark ++ sparkStreaming
 
   val spray = Seq(
     "io.spray"            %%  "spray-can"     % Version.spray,
@@ -26,15 +28,34 @@ object dependencies {
     "com.typesafe.play" % "play-json_2.10" % "2.4.0-M2"
   )
 
+  val confluent = Seq(
+    "io.confluent" % "kafka-avro-serializer" % "2.0.0"
+//    "io.confluent" % "confluent-platform-2.10" % "2.0.0"
+  )
+
   val spark = Seq(
-    "org.apache.spark" %% "spark-core" % "1.5.2"
+    "org.apache.spark" %% "spark-core" % "1.5.2",
+    "org.apache.spark" %% "spark-sql" % "1.5.2",
+    "org.apache.spark" %% "spark-mllib" % "1.5.2"
+  )
+
+  val avro = Seq(
+    "com.databricks" %% "spark-avro" % "2.0.1"
+//    "org.apache.avro" %% "avro" %" 1.7.7",
+//    "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.13"
+  )
+
+  val sparkStreaming = Seq(
+    "org.apache.spark" %% "spark-streaming" % "1.5.2"
+  )
+
+  val hadoop = Seq(
+    "org.apache.hadoop" % "hadoop-client" % "2.7.1"
   )
 
   val kafka = Seq(
-    "org.apache.kafka" % "kafka_2.10" % "0.8.1"
-      exclude("javax.jms", "jms")
-      exclude("com.sun.jdmk", "jmxtools")
-      exclude("com.sun.jmx", "jmxri")
+    "org.apache.spark" %% "spark-streaming-kafka" % "1.5.2",
+    "org.apache.kafka" % "kafka_2.10" % "0.9.0.0"
   )
 
   val cassandra = Seq(
